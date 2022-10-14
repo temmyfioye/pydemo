@@ -1,0 +1,8 @@
+import pandas as pd
+import pyreadstat as py
+
+df, meta = py.read_sav('file.sav') #file path being read from
+writer=pd.ExcelWriter ("file2.xlsx") #fconverting to excel
+df.to_excel(writer, 'df')
+df.to_csv('file2.csv') #converting to csv
+writer.save()
